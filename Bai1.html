@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Enter a number : <input type="text" id="inputNum">
+<input type="button" id="show" onclick="ShowPrime();" value="Show">
+<script>
+    function checkPrime(numbers) {
+        let count = numbers != 1;
+        if (numbers == 0) {
+            return -1;
+        }
+        for (let i = 2; i <= Math.sqrt(numbers); i++) {
+            if (numbers % i == 0) {
+                count = false;
+            }
+        }
+        return count;
+    }
+    function ShowPrime() {
+        let Number = parseInt(document.getElementById('inputNum').value);
+        for (let i = 0; i < Number; i++) {
+            let Counts = checkPrime(i);
+            if (Counts.valueOf() == true) {
+                document.write(i + " ");
+            }
+        }
+    }
+</script>
+</body>
+</html>
